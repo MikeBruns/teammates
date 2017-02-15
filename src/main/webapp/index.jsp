@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set var="jsIncludes">
     <script type="text/javascript" src="/js/checkBrowserVersion.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
 </c:set>
 <t:staticPage jsIncludes="${jsIncludes}" currentPage="index">
@@ -40,8 +41,14 @@
             <div class="overviewByteData">
                 <h2 class="overviewByteHeading">Praised by Users:</h2>
                 <p id="testimonialContainer">
-                    Thank you for building such a wonderful tool. 
-                    <br>-Faculty user, Canada
+                   <h2 class="testimonials">Congratulations for creating and managing such a wonderful and useful tool. I am planning to use for all the subjects I am teaching from now after getting fantastic feedback about this tool from my students. <br>- Faculty user, Australia</h2>
+				   <h2 class="testimonials">I just wanted to let you know that TEAMMATES has been a great success!  Students love it. <br>-Faculty user, USA</h2>
+				   <h2 class="testimonials">I had such a great experience with TEAMMATES in the previous semester that I am back for more! <br>-Faculty user, Pakistan</h2>
+				   <h2 class="testimonials">I found the TEAMMATES system really easy to use. On the whole a very positive experience. Using TEAMMATES certainly helps with one of the main potential problems of group-based assessments. <br>-Faculty user, Singapore</h2>
+				   <h2 class="testimonials">Thank you for this. I think it is brilliant. <br>-Faculty user, Canada</h2>
+				   <h2 class="testimonials">I find it really great and so simple to use. <br>-Faculty user, Austria</h2>  
+				   <h2 class="testimonials">Thank you for building such a wonderful tool. <br>-Faculty user, Canada</h2>
+				   <h2 class="testimonials">These peer evaluations will be perfect for classes.  I can already see that this is going to be an excellent tool as I need the teams to evaluate each other on a weekly basis.  Adding a new evaluation item and the questions/response criteria is so easy through your system. <br>-Faculty user, USA</h2>					   
                 </p>
             </div>
             <div style="clear: both;"></div>

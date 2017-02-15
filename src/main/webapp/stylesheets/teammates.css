@@ -379,3 +379,7 @@ h2.subcaption {
     width: 150px;
     text-align: center;
 }
+
+.testimonials {
+    display: none;
+}

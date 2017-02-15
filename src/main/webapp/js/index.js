@@ -1,18 +1,18 @@
 // TESTIMONIALS
 /* eslint-disable max-len */ // testimonials are better left off as is
-var TESTIMONIALS = [
-    'Congratulations for creating and managing such a wonderful and useful tool. I am planning to use for all the subjects I am teaching from now after getting fantastic feedback about this tool from my students. <br>- Faculty user, Australia',
-    'I just wanted to let you know that TEAMMATES has been a great success!  Students love it. <br>-Faculty user, USA',
-    'I had such a great experience with TEAMMATES in the previous semester that I am back for more! <br>-Faculty user, Pakistan',
-    'Thank you for this. I think it is brilliant. <br>-Faculty user, Canada',
-    'I found the TEAMMATES system really easy to use. On the whole a very positive experience. Using TEAMMATES certainly helps with one of the main potential problems of group-based assessments. <br>-Faculty user, Singapore',
-    'I find it really great and so simple to use. <br>-Faculty user, Austria',
-    'These peer evaluations will be perfect for classes.  I can already see that this is going to be an excellent tool as I need the teams to evaluate each other on a weekly basis.  Adding a new evaluation item and the questions/response criteria is so easy through your system. <br>-Faculty user, USA',
-    'Thank you for building such a wonderful tool. <br>-Faculty user, Canada'
-];
-/* eslint-enable max-len */
-var LOOP_INTERVAL = '5000'; // in milliseconds
-var CURRENT_TESTIMONIAL = 0;
+//var TESTIMONIALS = [
+//    'Congratulations for creating and managing such a wonderful and useful tool. I am planning to use for all the subjects I am teaching from now after getting fantastic feedback about this tool from my students. <br>- Faculty user, Australia',
+//    'I just wanted to let you know that TEAMMATES has been a great success!  Students love it. <br>-Faculty user, USA',
+//    'I had such a great experience with TEAMMATES in the previous semester that I am back for more! <br>-Faculty user, Pakistan',
+//    'Thank you for this. I think it is brilliant. <br>-Faculty user, Canada',
+//    'I found the TEAMMATES system really easy to use. On the whole a very positive experience. Using TEAMMATES certainly helps with one of the main potential problems of group-based assessments. <br>-Faculty user, Singapore',
+//    'I find it really great and so simple to use. <br>-Faculty user, Austria',
+//    'These peer evaluations will be perfect for classes.  I can already see that this is going to be an excellent tool as I need the teams to evaluate each other on a weekly basis.  Adding a new evaluation item and the questions/response criteria is so easy through your system. <br>-Faculty user, USA',
+//    'Thank you for building such a wonderful tool. <br>-Faculty user, Canada'
+//];
+///* eslint-enable max-len */
+//var LOOP_INTERVAL = '5000'; // in milliseconds
+//var CURRENT_TESTIMONIAL = 0;
 
 function instructorLogin() {
     // send request
@@ -64,14 +64,19 @@ function formatNumber(n) {
 }
 
 // looping through all the testimonials
-function loopTestimonials() {
-    var tc = document.getElementById('testimonialContainer');
+(function() {
+
+    var testimonials = $(".testimonials");
+    var index = -1;
     
-    // intended null checking and early return, to prevent constant failures in JavaScript tests
-    if (tc === null && typeof tc === 'object') {
-        return;
+    function nextTestimonial() {
+        ++index;
+        testimonials.eq(index % testimonials.length)
+            .fadeIn(2000)
+            .delay(5000)
+            .fadeOut(2000, nextTestimonial);
     }
     
-    tc.innerHTML = TESTIMONIALS[CURRENT_TESTIMONIAL];
-    CURRENT_TESTIMONIAL = (CURRENT_TESTIMONIAL + 1) % TESTIMONIALS.length;
-}
+    nextTestimonial();
+    
+})();
